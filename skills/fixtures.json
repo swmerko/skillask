@@ -1,0 +1,72 @@
+[
+  {
+    "fields": {
+      "name": "Languages",
+      "created": "2015-11-14T18:01:11.611Z",
+      "numchild": 2,
+      "enabled": true,
+      "modified": "2015-11-14T18:03:05.160Z",
+      "depth": 3,
+      "path": "000200010001",
+      "slug": "languages"
+    },
+    "model": "skills.skill",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "name": "Python",
+      "created": "2015-11-14T18:01:32.341Z",
+      "numchild": 0,
+      "enabled": true,
+      "modified": "2015-11-14T18:56:29.161Z",
+      "depth": 4,
+      "path": "0002000100010003",
+      "slug": "python"
+    },
+    "model": "skills.skill",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "name": "Javascript",
+      "created": "2015-11-14T18:02:06.558Z",
+      "numchild": 0,
+      "enabled": true,
+      "modified": "2015-11-14T18:02:06.576Z",
+      "depth": 4,
+      "path": "0002000100010002",
+      "slug": "javascript"
+    },
+    "model": "skills.skill",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "name": "Programming",
+      "created": "2015-11-14T18:02:54.425Z",
+      "numchild": 1,
+      "enabled": true,
+      "modified": "2015-11-14T18:03:41.947Z",
+      "depth": 2,
+      "path": "00020001",
+      "slug": "programming"
+    },
+    "model": "skills.skill",
+    "pk": 4
+  },
+  {
+    "fields": {
+      "name": "Computer",
+      "created": "2015-11-14T18:03:31.657Z",
+      "numchild": 1,
+      "enabled": true,
+      "modified": "2015-11-14T18:03:31.662Z",
+      "depth": 1,
+      "path": "0002",
+      "slug": "computer"
+    },
+    "model": "skills.skill",
+    "pk": 5
+  }
+]
