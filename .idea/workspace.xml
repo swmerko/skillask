@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26970f27-4b31-416f-a672-915ebc971687" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/home/static/typeahead/css/typeaheadjs.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/home/static/typeahead/css/example.css" afterPath="$PROJECT_DIR$/home/static/typeahead/css/custom.typeaheadjs.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home/static/typeahead/css/custom.typeaheadjs.css" afterPath="$PROJECT_DIR$/home/static/typeahead/css/custom.typeaheadjs.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home/templates/home.html" afterPath="$PROJECT_DIR$/home/templates/home.html" />
     </list>
     <ignored path="source.iws" />
@@ -80,11 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/home/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.509804">
-              <caret line="203" column="80" selection-start-line="203" selection-start-column="80" selection-end-line="203" selection-end-column="80" />
+            <state vertical-scroll-proportion="0.7404844">
+              <caret line="242" column="22" selection-start-line="242" selection-start-column="22" selection-end-line="242" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -112,11 +112,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="custom.typeaheadjs.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="custom.typeaheadjs.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/home/static/typeahead/css/custom.typeaheadjs.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+            <state vertical-scroll-proportion="-1.25">
+              <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -180,8 +180,8 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/SKILLASK/settings.py" />
         <option value="$PROJECT_DIR$/home/static/typeahead/css/typeaheadjs.css" />
-        <option value="$PROJECT_DIR$/home/templates/home.html" />
         <option value="$PROJECT_DIR$/home/static/typeahead/css/custom.typeaheadjs.css" />
+        <option value="$PROJECT_DIR$/home/templates/home.html" />
       </list>
     </option>
   </component>
@@ -193,6 +193,58 @@
   <component name="ProjectFrameBounds">
     <option name="width" value="1680" />
     <option name="height" value="1050" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Code style issuesCSS</id>
+          </State>
+          <State>
+            <id>Control flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>DOM issuesJavaScript</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>Invalid elementsCSS</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Probable bugsCSS</id>
+          </State>
+          <State>
+            <id>Python</id>
+          </State>
+          <State>
+            <id>ReST</id>
+          </State>
+          <State>
+            <id>SQL</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Buildout</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -397,7 +449,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/venv/bin/python" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="FullScreen" value="true" />
@@ -720,7 +772,13 @@
       <option name="project" value="LOCAL" />
       <updated>1452104687936</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fix graphic">
+      <created>1452112855812</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1452112855812</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -768,7 +826,8 @@
     <MESSAGE value="remove .idea" />
     <MESSAGE value="+ homepage and cross origin" />
     <MESSAGE value="fix middleware" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix middleware" />
+    <MESSAGE value="fix graphic" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix graphic" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1146,18 +1205,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home/templates/home.html">
+    <entry file="file://$PROJECT_DIR$/home/static/typeahead/css/custom.typeaheadjs.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.509804">
-          <caret line="203" column="80" selection-start-line="203" selection-start-column="80" selection-end-line="203" selection-end-column="80" />
+        <state vertical-scroll-proportion="-1.25">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home/static/typeahead/css/custom.typeaheadjs.css">
+    <entry file="file://$PROJECT_DIR$/home/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.7404844">
+          <caret line="242" column="22" selection-start-line="242" selection-start-column="22" selection-end-line="242" selection-end-column="22" />
           <folding />
         </state>
       </provider>
