@@ -40,9 +40,11 @@ INSTALLED_APPS = (
     # pip
     'treebeard',
     'rest_framework',
+    'corsheaders',
     # custom
     'accounts',
     'skills',
+    'home',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -111,8 +113,6 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 100,
 }
 
-DATABASES['default'] = dj_database_url.config()
-
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
@@ -127,3 +127,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+DATABASES['default'] = dj_database_url.config()

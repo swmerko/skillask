@@ -23,4 +23,5 @@ urlpatterns = [
     # Api Rest
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^api-list/', include('api.urls')),
+    url(r'', include('home.urls')),
 ]
