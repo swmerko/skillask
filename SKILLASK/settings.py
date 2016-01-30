@@ -133,4 +133,4 @@ STATICFILES_DIRS = (
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-#DATABASES['default'] = dj_database_url.config()
+DATABASES['default'] = dj_database_url.config()
