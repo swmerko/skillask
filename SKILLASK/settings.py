@@ -171,6 +171,8 @@ SOCIAL_AUTH_PIPELINE = (
     'accounts.pipeline.save_profile_picture',
 )
 
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'https://www.youtube.com/watch?v=KPQFXPyALr8'
+
 # Amazon S3
 
 AWS_STORAGE_BUCKET_NAME = 'skillaskmedia'
