@@ -8,5 +8,11 @@ class UserProfile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, unique=True)
     image = ImageField(upload_to='accounts/images/', null=True)
 
+    def get_image_url(self):
+        if self.image:
+            return self.image.url
+        else:
+            return None
+
 
 User.profile = property(lambda u: UserProfile.objects.get_or_create(user=u)[0])
