@@ -20,6 +20,7 @@ class SupportUserSkillSerializer(serializers.ModelSerializer):
 
 
 class UserSkillExtendedSerializer(serializers.Serializer):
+    id = serializers.IntegerField()
     skill_id = serializers.IntegerField()
     skill_name = serializers.CharField(max_length=200, source='skill.name')
     user_id = serializers.IntegerField()
