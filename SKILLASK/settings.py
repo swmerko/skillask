@@ -42,6 +42,8 @@ INSTALLED_APPS = (
     'rest_framework',
     'django_filters',
     'corsheaders',
+    'social.apps.django_app.default',
+    'sorl.thumbnail',
     # custom
     'accounts',
     'skills',
@@ -75,6 +77,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     },
@@ -112,7 +116,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ],
     # 'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',),
-    #'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 100,
 }
 
@@ -133,4 +137,63 @@ STATICFILES_DIRS = (
 
 CORS_ORIGIN_ALLOW_ALL = True
 
+# python social auth
+
+AUTHENTICATION_BACKENDS = (
+    'social.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_FACEBOOK_KEY = '700201249992671'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'e5d5d5cccf30d1b7c778431c85b1a5e3'
+SOCIAL_AUTH_FACEBOOK_SCOPE = [
+    'email',
+    'public_profile',
+    'user_friends',
+    'user_website',
+    'user_location',
+    'user_about_me'
+]
+
+SOCIAL_AUTH_ADMIN_USER_SEARCH_FIELDS = ['username', 'first_name', 'email']
+
+SOCIAL_AUTH_PIPELINE = (
+    'social.pipeline.social_auth.social_details',
+    'social.pipeline.social_auth.social_uid',
+    'social.pipeline.social_auth.auth_allowed',
+    'social.pipeline.social_auth.social_user',
+    'social.pipeline.user.get_username',
+    'social.pipeline.mail.mail_validation',
+    'social.pipeline.user.create_user',
+    'social.pipeline.social_auth.associate_user',
+    'social.pipeline.social_auth.load_extra_data',
+    'social.pipeline.user.user_details',
+    'accounts.pipeline.save_profile_picture',
+)
+
+# Amazon S3
+
+AWS_STORAGE_BUCKET_NAME = 'skillask'
+AWS_ACCESS_KEY_ID = 'AKIAIGYRGRPNN4FKYCCQ'
+AWS_SECRET_ACCESS_KEY = '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'
+
+# Tell django-storages that when coming up with the URL for an item in S3 storage, keep
+# it simple - just use this domain plus the path. (If this isn't set, things get complicated).
+# This controls how the `static` template tag from `staticfiles` gets expanded, if you're using it.
+# We also use it in the next setting.
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+# Tell the staticfiles app to use S3Boto storage when writing the collected static files (when
+# you run `collectstatic`).
+
+AWS_STORAGE_BUCKET_NAME = "skillask"
+MEDIAFILES_LOCATION = 'media'
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+DEFAULT_FILE_STORAGE = 'core.custom_storages.MediaStorage'
 DATABASES['default'] = dj_database_url.config()
+
+
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, '../media')
+
+
