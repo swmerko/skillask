@@ -17,3 +17,12 @@ class UserSkillSerializer(serializers.ModelSerializer):
 class SupportUserSkillSerializer(serializers.ModelSerializer):
     class Meta:
         model = SupportUserSkill
+
+
+class UserSkillExtendedSerializer(serializers.Serializer):
+    skill_id = serializers.IntegerField()
+    skill_name = serializers.CharField(max_length=200, source='skill.name')
+    user_id = serializers.IntegerField()
+    user_email = serializers.EmailField(source='user.email')
+    user_full_name = serializers.CharField(max_length=200, source='user.get_full_name')
+
