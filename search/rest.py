@@ -10,10 +10,10 @@ from skills.serializers import UserSkillExtendedSerializer
 def base_search(request):
     """
 
-    :param skill_name:
+    :param skillName:
     :return:
     """
-    skill_string = request.REQUEST.get('skill_name')
+    skill_string = request.REQUEST.get('skillName')
 
     if skill_string:
 
