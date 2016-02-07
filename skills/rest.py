@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 from rest_framework.filters import SearchFilter, DjangoFilterBackend
 
-from .serializers import SkillSerializer, UserSkillSerializer, SupportUserSkillSerializer
+from .serializers import SkillSerializer, UserSkillSerializer, SupportUserSkillSerializer, UserSkillExtendedSerializer
 from .models import Skill, UserSkill, SupportUserSkill
 
 
@@ -31,10 +31,15 @@ class UserSkillViewSet(viewsets.ModelViewSet):
     A simple ViewSet for viewing and editing the accounts
     associated with the user.
     """
-    serializer_class = UserSkillSerializer
+    serializer_class = UserSkillExtendedSerializer
     queryset = UserSkill.objects.all()
     filter_fields = ('user', 'skill')
 
+    def get_serializer_class(self):
+        if self.action == 'list':
+            return UserSkillExtendedSerializer
+        else:
+            return UserSkillSerializer
 
 class SupportUserSkillViewSet(viewsets.ModelViewSet):
     """
