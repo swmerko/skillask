@@ -30,10 +30,24 @@ class UserSkillViewSet(viewsets.ModelViewSet):
     """
     A simple ViewSet for viewing and editing the accounts
     associated with the user.
+
+    Querystring Parameters:
+    **skillId**
     """
-    serializer_class = UserSkillExtendedSerializer
-    queryset = UserSkill.objects.all()
-    filter_fields = ('user', 'skill')
+
+    filter_fields = ('id',)
+
+    def get_queryset(self):
+        """
+        Optionally restricts the returned purchases to a given user,
+        by filtering against a `username` query parameter in the URL.
+        """
+        queryset = UserSkill.objects.all()
+        skill_id = self.request.query_params.get('skillId', None)
+        if skill_id is not None:
+            queryset = queryset.filter(skill_id=skill_id)
+        return queryset
+
 
     def get_serializer_class(self):
         if self.action == 'list':
