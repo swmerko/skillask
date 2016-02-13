@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import viewsets
-
+from rest_framework.permissions import IsAuthenticated
 from .serializers import UserProfileSerializer, UserSerializer
 from .models import UserProfile
 
@@ -12,6 +12,7 @@ class UserProfileViewSet(viewsets.ModelViewSet):
     """
     serializer_class = UserProfileSerializer
     queryset = UserProfile.objects.all()
+    permission_classes = (IsAuthenticated, )
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -21,6 +22,7 @@ class UserViewSet(viewsets.ModelViewSet):
     """
     serializer_class = UserSerializer
     queryset = User.objects.all()
+    permission_classes = (IsAuthenticated, )
 
     def get_object(self):
         """
@@ -28,7 +30,7 @@ class UserViewSet(viewsets.ModelViewSet):
         by filtering against a `username` query parameter in the URL.
         """
         get_current_user = self.kwargs.get('pk', None) == 'current'
+
         if get_current_user:
-            return User.objects.get(pk=self.request.user.pk)
-        else:
-            return super(UserViewSet, self).get_object()
+            self.kwargs['pk'] = self.request.user.pk
+        return super(UserViewSet, self).get_object()
