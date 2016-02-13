@@ -1,9 +1,7 @@
 from rest_framework import viewsets
 from rest_framework.filters import SearchFilter, DjangoFilterBackend
-
-from .serializers import SkillSerializer, UserSkillSerializer, SupportUserSkillSerializer, UserSkillExtendedSerializer
 from .models import Skill, UserSkill, SupportUserSkill
-
+from .serializers import SkillSerializer, UserSkillSerializer, SupportUserSkillSerializer, UserSkillExtendedSerializer
 
 
 # class SkillFilter(django_filters.FilterSet):
@@ -48,12 +46,12 @@ class UserSkillViewSet(viewsets.ModelViewSet):
             queryset = queryset.filter(skill_id=skill_id)
         return queryset
 
-
     def get_serializer_class(self):
         if self.action == 'list':
             return UserSkillExtendedSerializer
         else:
             return UserSkillSerializer
+
 
 class SupportUserSkillViewSet(viewsets.ModelViewSet):
     """
