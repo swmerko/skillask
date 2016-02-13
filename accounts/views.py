@@ -26,7 +26,7 @@ def post_social_registration(request):
 
     token = access_token.token
     params = {'token': token}
-    redirect_url = 'http://matteoercolani.it/skillask/#profile?' + urllib.urlencode(params)
+    redirect_url = 'http://matteoercolani.it/skillask/?' + urllib.urlencode(params) + '#profile'
 
     return redirect(redirect_url)
 
@@ -48,6 +48,6 @@ def post_social_login(request):
 
     token = access_token.token
     params = {'token': token}
-    redirect_url = 'http://matteoercolani.it/skillask/#profile?' + urllib.urlencode(params)
+    redirect_url = 'http://matteoercolani.it/skillask/?' + urllib.urlencode(params) + '#profile'
 
     return redirect(redirect_url)
