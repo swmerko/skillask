@@ -41,9 +41,10 @@ INSTALLED_APPS = (
     'treebeard',
     'rest_framework',
     'django_filters',
-    'corsheaders',
     'social.apps.django_app.default',
     'sorl.thumbnail',
+    'oauth2_provider',
+    'corsheaders',
     # custom
     'accounts',
     'skills',
@@ -58,6 +59,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    'oauth2_provider.backends.OAuth2Backend',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -110,6 +112,11 @@ USE_L10N = True
 USE_TZ = True
 
 REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'oauth2_provider.ext.rest_framework.OAuth2Authentication',
+    ),
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
@@ -118,6 +125,12 @@ REST_FRAMEWORK = {
     # 'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',),
     # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 100,
+}
+
+OAUTH2_PROVIDER = {
+    # this is the list of available scopes
+    'SCOPES': {'read': 'Read scope'},
+    'ACCESS_TOKEN_EXPIRE_SECONDS': 36000,
 }
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
@@ -172,7 +185,7 @@ SOCIAL_AUTH_PIPELINE = (
     'accounts.pipeline.save_profile_picture',
 )
 
-SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'https://www.youtube.com/watch?v=KPQFXPyALr8'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'post_social_login'
 
 # Amazon S3
 
