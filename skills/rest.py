@@ -44,6 +44,11 @@ class UserSkillViewSet(viewsets.ModelViewSet):
         skill_id = self.request.query_params.get('skillId', None)
         if skill_id is not None:
             queryset = queryset.filter(skill_id=skill_id)
+
+        user_id = self.request.query_params.get('skillId', None)
+        if user_id:
+            queryset = queryset.filter(user_id=user_id)
+
         return queryset
 
     def get_serializer_class(self):
