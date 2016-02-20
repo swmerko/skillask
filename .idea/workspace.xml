@@ -126,8 +126,10 @@
         <entry file="file://$PROJECT_DIR$/accounts/pipeline.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.7887324">
-              <caret line="57" column="89" selection-start-line="57" selection-start-column="89" selection-end-line="57" selection-end-column="89" />
-              <folding />
+              <caret line="55" column="89" selection-start-line="55" selection-start-column="89" selection-end-line="55" selection-end-column="89" />
+              <folding>
+                <element signature="e#0#46#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -839,7 +841,13 @@
       <option name="project" value="LOCAL" />
       <updated>1455966473541</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="fix pipeline">
+      <created>1456002740236</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1456002740236</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -849,6 +857,7 @@
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22100122" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3990981" sideWeight="0.50321984" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -857,7 +866,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32807216" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -920,7 +928,8 @@
     <MESSAGE value="fix" />
     <MESSAGE value="post login url" />
     <MESSAGE value="unique toghether skill user and supporters" />
-    <option name="LAST_COMMIT_MESSAGE" value="unique toghether skill user and supporters" />
+    <MESSAGE value="fix pipeline" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix pipeline" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1318,8 +1327,10 @@
     <entry file="file://$PROJECT_DIR$/accounts/pipeline.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7887324">
-          <caret line="57" column="89" selection-start-line="57" selection-start-column="89" selection-end-line="57" selection-end-column="89" />
-          <folding />
+          <caret line="55" column="89" selection-start-line="55" selection-start-column="89" selection-end-line="55" selection-end-column="89" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

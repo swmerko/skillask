@@ -1,8 +1,6 @@
-from django.shortcuts import redirect
-from social.pipeline.partial import partial
-from requests import request, HTTPError
 from django.core.files.base import ContentFile
-from facepy import GraphAPI
+
+from requests import request, HTTPError
 
 
 # public_profile
@@ -56,5 +54,5 @@ def save_profile_picture(backend, user, response, details,
             pass
         else:
             user.profile.image.save('{0}_social.jpg'.format(user.username.encode('utf-8')),
-                              ContentFile(response.content))
+                                    ContentFile(response.content))
             user.profile.save()
