@@ -55,6 +55,6 @@ def save_profile_picture(backend, user, response, details,
         except HTTPError:
             pass
         else:
-            user.profile.image.save('{0}_social.jpg'.format(user.username),
+            user.profile.image.save('{0}_social.jpg'.format(user.username.encode('utf-8')),
                               ContentFile(response.content))
             user.profile.save()
