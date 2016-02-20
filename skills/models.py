@@ -1,9 +1,7 @@
+from core.models import TimeStampedModel
 from django.conf import settings
 from django.db import models
-
 from treebeard.mp_tree import MP_Node
-
-from core.models import TimeStampedModel
 
 
 class Skill(MP_Node, TimeStampedModel):
@@ -21,6 +19,9 @@ class UserSkill(TimeStampedModel):
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
     skill = models.ForeignKey(Skill)
 
+    class Meta:
+        unique_together = ('user', 'skill',)
+
     def __unicode__(self):
         return "%s_%s" % (self.user.username, self.skill.name)
 
@@ -28,6 +29,9 @@ class UserSkill(TimeStampedModel):
 class SupportUserSkill(TimeStampedModel):
     supporter = models.ForeignKey(settings.AUTH_USER_MODEL)
     user_skill = models.ForeignKey(UserSkill)
+
+    class Meta:
+        unique_together = ('supporter', 'user_skill',)
 
     def __unicode__(self):
         return "%s_support_%s_%s" % (
