@@ -1,7 +1,10 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, status
+from rest_framework.exceptions import ValidationError
 from rest_framework.filters import SearchFilter, DjangoFilterBackend
-from .models import Skill, UserSkill, SupportUserSkill
-from .serializers import SkillSerializer, UserSkillSerializer, SupportUserSkillSerializer, UserSkillExtendedSerializer
+from rest_framework.response import Response
+from .models import Skill, UserSkill, SupportUserSkill, SkillProposal
+from .serializers import SkillSerializer, UserSkillSerializer, SupportUserSkillSerializer, UserSkillExtendedSerializer, \
+    SkillProposalSerializer, CreateSkillSerializer, CreateSkillProposalSerializer
 
 
 # class SkillFilter(django_filters.FilterSet):
@@ -22,6 +25,15 @@ class SkillViewSet(viewsets.ModelViewSet):
     filter_backends = (SearchFilter, DjangoFilterBackend)
     filter_fields = ('name', 'slug')
     search_fields = ('name',)
+
+    def get_serializer_class(self):
+        if self.action in ['create']:
+            return CreateSkillSerializer
+        else:
+            return SkillSerializer
+
+    def create(self, request, *args, **kwargs):
+        raise ValidationError('Use skill proposal instead!')
 
 
 class UserSkillViewSet(viewsets.ModelViewSet):
@@ -66,3 +78,49 @@ class SupportUserSkillViewSet(viewsets.ModelViewSet):
     serializer_class = SupportUserSkillSerializer
     queryset = SupportUserSkill.objects.all()
     filter_fields = ('supporter', 'user_skill')
+
+
+class SkillProposalViewSet(viewsets.ModelViewSet):
+    """
+    A simple ViewSet for viewing and editing the proposal
+    associated with the skill.
+    """
+    serializer_class = SkillProposalSerializer
+    queryset = SkillProposal.objects.all()
+    filter_fields = ('closed', 'skill', 'user', 'moderator')
+
+    def get_serializer_class(self):
+        if self.action in ['create']:
+            return CreateSkillProposalSerializer
+        else:
+            return SkillProposalSerializer
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        try:
+            proposal_node = Skill.objects.get(pk=1)
+            if proposal_node.slug != 'proposals':
+                proposal_node.slug = 'proposals'
+                proposal_node.name = 'proposals'
+        except Skill.DoesNotExist:
+            proposal_node = Skill.add_root(name='proposals', slug='proposals', pk=1)
+        proposal_data = serializer.data
+
+        # state 1 is pending
+        new_skill = proposal_node.add_child(name=proposal_data['name'],
+                                            slug=proposal_data['name'],
+                                            enabled=True,
+                                            state=1)
+        proposed_skill = SkillProposal.objects.create(
+            user=request.user,
+            skill=new_skill
+        )
+
+        if proposal_data['add_skill_to_user']:
+            UserSkill.objects.create(user=request.user, skill=new_skill)
+
+        serializer = SkillProposalSerializer(proposed_skill)
+
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)

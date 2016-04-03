@@ -1,14 +1,14 @@
 [
   {
     "fields": {
-      "name": "Languages",
+      "name": "Proposes",
       "created": "2015-11-14T18:01:11.611Z",
       "numchild": 2,
       "enabled": true,
       "modified": "2015-11-14T18:03:05.160Z",
       "depth": 3,
       "path": "000200010001",
-      "slug": "languages"
+      "slug": "proposes"
     },
     "model": "skills.skill",
     "pk": 1

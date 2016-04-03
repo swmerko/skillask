@@ -1,3 +1,4 @@
+import requests
 from django.core.files.base import ContentFile
 
 from requests import request, HTTPError
@@ -56,3 +57,21 @@ def save_profile_picture(backend, user, response, details,
             user.profile.image.save('{0}_social.jpg'.format(user.username.encode('utf-8')),
                                     ContentFile(response.content))
             user.profile.save()
+
+
+def save_location(backend, user, response, details,
+                         is_new=False, *args, **kwargs):
+    if backend.name == 'linkedin-oauth2':
+        linkedin_skills_url = 'https://api.linkedin.com/v1/people/~:(id,num-connections,picture-url,location,specialties)?format=json&oauth2_access_token=%s' % response['access_token']
+        linkedin_response = requests.get(linkedin_skills_url)
+        linkedin_data = linkedin_response.json()
+
+        try:
+            address = linkedin_data['location']['name']
+            user.profile.update_coordinate(address=address)
+        except KeyError:
+            pass
+
+
+
+

@@ -155,11 +155,12 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 AUTHENTICATION_BACKENDS = (
     'social.backends.facebook.FacebookOAuth2',
+    'social.backends.linkedin.LinkedinOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
 
-SOCIAL_AUTH_FACEBOOK_KEY = '700201249992671'
-SOCIAL_AUTH_FACEBOOK_SECRET = 'e5d5d5cccf30d1b7c778431c85b1a5e3'
+SOCIAL_AUTH_FACEBOOK_KEY = '771zsqdcdo6g9g'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'ZsJPEKGTrrk48IRx'
 SOCIAL_AUTH_FACEBOOK_SCOPE = [
     'email',
     'public_profile',
@@ -167,6 +168,24 @@ SOCIAL_AUTH_FACEBOOK_SCOPE = [
     'user_website',
     'user_location',
     'user_about_me'
+]
+
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'ZsJPEKGTrrk48IRx'
+SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '771zsqdcdo6g9g'
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SCOPE = [
+    'r_basicprofile',
+    'r_emailaddress',
+    'rw_company_admin',
+    'w_share'
+]
+SOCIAL_AUTH_LINKEDIN_EXTRA_DATA = [
+    ('id', 'id'),
+    ('firstName', 'first_name'),
+    ('lastName', 'last_name'),
+    ('emailAddress', 'email_address'),
+    ('headline', 'headline'),
+    ('industry', 'industry'),
+    ('skills', 'skills'),
 ]
 
 SOCIAL_AUTH_ADMIN_USER_SEARCH_FIELDS = ['username', 'first_name', 'email']
@@ -183,6 +202,7 @@ SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.social_auth.load_extra_data',
     'social.pipeline.user.user_details',
     'accounts.pipeline.save_profile_picture',
+    'accounts.pipeline.save_location',
 )
 
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'post_social_login'
@@ -202,10 +222,10 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 # Tell the staticfiles app to use S3Boto storage when writing the collected static files (when
 # you run `collectstatic`).
 
-MEDIAFILES_LOCATION = 'media'
-MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-DEFAULT_FILE_STORAGE = 'core.custom_storages.MediaStorage'
-DATABASES['default'] = dj_database_url.config()
+# MEDIAFILES_LOCATION = 'media'
+# MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+# DEFAULT_FILE_STORAGE = 'core.custom_storages.MediaStorage'
+# DATABASES['default'] = dj_database_url.config()
 
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, '../media')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '../media')
