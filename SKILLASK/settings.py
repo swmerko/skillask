@@ -207,25 +207,34 @@ SOCIAL_AUTH_PIPELINE = (
 
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'post_social_login'
 
-# Amazon S3
+try:
+    if os.environ['S3_ID'] == 'LIVE':
+        CURRENT_ENV = 'LIVE'
+    else:
+        CURRENT_ENV = 'LOCAL'
 
-AWS_STORAGE_BUCKET_NAME = 'skillaskmedia'
-AWS_ACCESS_KEY_ID = os.environ['S3_ID']
-AWS_SECRET_ACCESS_KEY = os.environ['S3_KEY']
+except KeyError:
+    CURRENT_ENV = 'LOCAL'
 
-# Tell django-storages that when coming up with the URL for an item in S3 storage, keep
-# it simple - just use this domain plus the path. (If this isn't set, things get complicated).
-# This controls how the `static` template tag from `staticfiles` gets expanded, if you're using it.
-# We also use it in the next setting.
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+if CURRENT_ENV == 'LIVE':
+    # Amazon S3
+    AWS_STORAGE_BUCKET_NAME = 'skillaskmedia'
+    AWS_ACCESS_KEY_ID = os.environ['S3_ID']
+    AWS_SECRET_ACCESS_KEY = os.environ['S3_KEY']
 
-# Tell the staticfiles app to use S3Boto storage when writing the collected static files (when
-# you run `collectstatic`).
+    # Tell django-storages that when coming up with the URL for an item in S3 storage, keep
+    # it simple - just use this domain plus the path. (If this isn't set, things get complicated).
+    # This controls how the `static` template tag from `staticfiles` gets expanded, if you're using it.
+    # We also use it in the next setting.
+    AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
-MEDIAFILES_LOCATION = 'media'
-MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-DEFAULT_FILE_STORAGE = 'core.custom_storages.MediaStorage'
-DATABASES['default'] = dj_database_url.config()
+    # Tell the staticfiles app to use S3Boto storage when writing the collected static files (when
+    # you run `collectstatic`).
 
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, '../media')
+    MEDIAFILES_LOCATION = 'media'
+    MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+    DEFAULT_FILE_STORAGE = 'core.custom_storages.MediaStorage'
+    DATABASES['default'] = dj_database_url.config()
+else:
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, '../media')
