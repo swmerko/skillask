@@ -210,8 +210,8 @@ SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'post_social_login'
 # Amazon S3
 
 AWS_STORAGE_BUCKET_NAME = 'skillaskmedia'
-AWS_ACCESS_KEY_ID = 'AKIAIGYRGRPNN4FKYCCQ'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = os.environ['S3_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['S3_KEY']
 
 # Tell django-storages that when coming up with the URL for an item in S3 storage, keep
 # it simple - just use this domain plus the path. (If this isn't set, things get complicated).
