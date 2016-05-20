@@ -23,7 +23,7 @@ class SkillViewSet(viewsets.ModelViewSet):
     serializer_class = SkillSerializer
     queryset = Skill.objects.all()
     filter_backends = (SearchFilter, DjangoFilterBackend)
-    filter_fields = ('name', 'slug')
+    filter_fields = ('name', 'slug', 'category')
     search_fields = ('name',)
 
     def get_serializer_class(self):

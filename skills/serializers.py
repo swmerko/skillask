@@ -5,7 +5,7 @@ from .models import Skill, UserSkill, SupportUserSkill, SkillProposal
 class SkillSerializer(serializers.ModelSerializer):
     class Meta:
         model = Skill
-        fields = ('id', 'name', 'category', 'slug', 'enabled', 'state')
+        fields = ('id', 'name', 'category', 'slug', 'enabled', 'state', 'category')
 
 
 class CreateSkillSerializer(serializers.ModelSerializer):
