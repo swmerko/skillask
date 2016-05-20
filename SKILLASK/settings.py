@@ -208,7 +208,7 @@ SOCIAL_AUTH_PIPELINE = (
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'post_social_login'
 
 try:
-    if os.environ['S3_ID'] == 'LIVE':
+    if os.environ['CURRENT_ENV'] == 'LIVE':
         CURRENT_ENV = 'LIVE'
     else:
         CURRENT_ENV = 'LOCAL'
