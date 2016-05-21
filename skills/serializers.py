@@ -19,6 +19,16 @@ class UserSkillSerializer(serializers.ModelSerializer):
         model = UserSkill
 
 
+class UserSkillExtendedSerializer(serializers.Serializer):
+    id = serializers.IntegerField()
+    skill = serializers.IntegerField(source='skill_id')
+    skill_name = serializers.CharField(max_length=200, source='skill.name')
+    user = serializers.IntegerField(source='user_id')
+    user_email = serializers.EmailField(source='user.email')
+    user_profile_image_url = serializers.CharField(source='user.profile.get_image_url')
+    user_full_name = serializers.CharField(max_length=200, source='user.get_full_name')
+
+
 class SkillProposalSerializer(serializers.ModelSerializer):
     class Meta:
         model = SkillProposal
@@ -36,13 +46,3 @@ class CreateSkillProposalSerializer(serializers.ModelSerializer):
 class SupportUserSkillSerializer(serializers.ModelSerializer):
     class Meta:
         model = SupportUserSkill
-
-
-class UserSkillExtendedSerializer(serializers.Serializer):
-    id = serializers.IntegerField()
-    skill_id = serializers.IntegerField()
-    skill_name = serializers.CharField(max_length=200, source='skill.name')
-    user_id = serializers.IntegerField()
-    user_email = serializers.EmailField(source='user.email')
-    user_profile_image_url = serializers.CharField(source='user.profile.get_image_url')
-    user_full_name = serializers.CharField(max_length=200, source='user.get_full_name')
