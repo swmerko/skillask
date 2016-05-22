@@ -32,6 +32,19 @@ class SkillViewSet(viewsets.ModelViewSet):
         else:
             return SkillSerializer
 
+    def get_queryset(self):
+        """
+        Optionally restricts the returned purchases to a given user,
+        by filtering against a `username` query parameter in the URL.
+        """
+        queryset = Skill.objects.all()
+        exclude_their_skills = self.request.query_params.get('excludeTheirSkills', 'false')
+        exclude_their_skills = exclude_their_skills in ['y', 'yes', 'true', '1']
+        if exclude_their_skills:
+            their_skill_list = UserSkill.objects.filter(user_id=self.request.user.id).values_list('skill_id', flat=True)
+            queryset = queryset.exclude(id__in=their_skill_list)
+        return queryset
+
     def create(self, request, *args, **kwargs):
         raise ValidationError('Use skill proposal instead!')
 
