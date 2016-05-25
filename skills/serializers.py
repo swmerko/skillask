@@ -22,6 +22,7 @@ class UserSkillSerializer(serializers.ModelSerializer):
 class UserSkillExtendedSerializer(serializers.Serializer):
     id = serializers.IntegerField()
     skill = serializers.IntegerField(source='skill_id')
+    skill_category = serializers.IntegerField(source='skill.category')
     skill_name = serializers.CharField(max_length=200, source='skill.name')
     user = serializers.IntegerField(source='user_id')
     user_email = serializers.EmailField(source='user.email')
