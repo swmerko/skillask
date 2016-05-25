@@ -82,6 +82,10 @@ class UserSkillViewSet(viewsets.ModelViewSet):
         else:
             return UserSkillSerializer
 
+    def delete(self, request, pk, format=None):
+            snippet = self.get_object(pk)
+            snippet.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT, content_type='application/json')
 
 class SupportUserSkillViewSet(viewsets.ModelViewSet):
     """
