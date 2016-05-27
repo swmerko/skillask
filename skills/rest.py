@@ -85,7 +85,7 @@ class UserSkillViewSet(viewsets.ModelViewSet):
     def destroy(self, request, pk, format=None):
         snippet = self.get_object()
         snippet.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT, content_type='application/json')
+        return Response({}, status=status.HTTP_204_NO_CONTENT, content_type='application/json')
 
 class SupportUserSkillViewSet(viewsets.ModelViewSet):
     """
