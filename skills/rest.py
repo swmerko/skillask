@@ -2,6 +2,7 @@ from rest_framework import viewsets, status
 from rest_framework.exceptions import ValidationError
 from rest_framework.filters import SearchFilter, DjangoFilterBackend
 from rest_framework.response import Response
+
 from .models import Skill, UserSkill, SupportUserSkill, SkillProposal
 from .serializers import SkillSerializer, UserSkillSerializer, SupportUserSkillSerializer, UserSkillExtendedSerializer, \
     SkillProposalSerializer, CreateSkillSerializer, CreateSkillProposalSerializer
@@ -82,10 +83,11 @@ class UserSkillViewSet(viewsets.ModelViewSet):
         else:
             return UserSkillSerializer
 
-    def destroy(self, request, pk, format=None):
-        snippet = self.get_object()
-        snippet.delete()
+    def destroy(self, request, *args, **kwargs):
+        instance = self.get_object()
+        self.perform_destroy(instance)
         return Response({'text': 'deleted'}, status=status.HTTP_202_ACCEPTED, content_type='application/json')
+
 
 class SupportUserSkillViewSet(viewsets.ModelViewSet):
     """
@@ -95,6 +97,11 @@ class SupportUserSkillViewSet(viewsets.ModelViewSet):
     serializer_class = SupportUserSkillSerializer
     queryset = SupportUserSkill.objects.all()
     filter_fields = ('supporter', 'user_skill')
+
+    def destroy(self, request, *args, **kwargs):
+        instance = self.get_object()
+        self.perform_destroy(instance)
+        return Response({'text': 'deleted'}, status=status.HTTP_202_ACCEPTED, content_type='application/json')
 
 
 class SkillProposalViewSet(viewsets.ModelViewSet):
