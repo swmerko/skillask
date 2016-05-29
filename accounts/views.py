@@ -1,6 +1,7 @@
 import urllib
 from datetime import datetime, timedelta
 
+from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 # Create your views here.
@@ -26,7 +27,7 @@ def post_social_registration(request):
 
     token = access_token.token
     params = {'token': token}
-    redirect_url = 'http://matteoercolani.it/skillask/?' + urllib.urlencode(params) + '#profile/addSkills'
+    redirect_url = '%s?' % settings.FRONTEND_BASE_URL + urllib.urlencode(params)
 
     return redirect(redirect_url)
 

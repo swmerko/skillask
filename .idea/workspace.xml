@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="716ffa0a-3097-4248-ab11-04c1a33899e4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/skills/models.py" afterPath="$PROJECT_DIR$/skills/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/skills/rest.py" afterPath="$PROJECT_DIR$/skills/rest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/skills/serializers.py" afterPath="$PROJECT_DIR$/skills/serializers.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SKILLASK/settings.py" afterPath="$PROJECT_DIR$/SKILLASK/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/accounts/views.py" afterPath="$PROJECT_DIR$/accounts/views.py" />
     </list>
     <ignored path="skillask.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,14 +57,14 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SKILLASK/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="5" column="16" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="16" />
+            <state relative-caret-position="460">
+              <caret line="249" column="51" selection-start-line="249" selection-start-column="51" selection-end-line="249" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/skills/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="310">
@@ -73,6 +72,16 @@
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/accounts/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -110,7 +119,6 @@
         <option value="$PROJECT_DIR$/SKILLASK/urls.py" />
         <option value="$PROJECT_DIR$/accounts/urls.py" />
         <option value="$PROJECT_DIR$/accounts/serializers.py" />
-        <option value="$PROJECT_DIR$/accounts/views.py" />
         <option value="$PROJECT_DIR$/core/models.py" />
         <option value="$PROJECT_DIR$/accounts/migrations/0003_auto_20160403_1243.py" />
         <option value="$PROJECT_DIR$/accounts/pipeline.py" />
@@ -124,10 +132,11 @@
         <option value="$PROJECT_DIR$/home/urls.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/accounts/rest.py" />
-        <option value="$PROJECT_DIR$/SKILLASK/settings.py" />
         <option value="$PROJECT_DIR$/skills/models.py" />
         <option value="$PROJECT_DIR$/skills/rest.py" />
         <option value="$PROJECT_DIR$/skills/serializers.py" />
+        <option value="$PROJECT_DIR$/accounts/views.py" />
+        <option value="$PROJECT_DIR$/SKILLASK/settings.py" />
       </list>
     </option>
   </component>
@@ -943,7 +952,14 @@
       <option name="project" value="LOCAL" />
       <updated>1464533380055</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="include supporters for userSkill">
+      <created>1464537510082</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1464537510082</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1019,7 +1035,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
-    <MESSAGE value="fix s3" />
     <MESSAGE value="fix camelcase" />
     <MESSAGE value="fix list serializer" />
     <MESSAGE value="fix post login url" />
@@ -1044,7 +1059,8 @@
     <MESSAGE value="fix csrf" />
     <MESSAGE value="add skill category" />
     <MESSAGE value="content type on delete" />
-    <option name="LAST_COMMIT_MESSAGE" value="content type on delete" />
+    <MESSAGE value="include supporters for userSkill" />
+    <option name="LAST_COMMIT_MESSAGE" value="include supporters for userSkill" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1080,13 +1096,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/accounts/migrations/0002_userprofile_image.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/accounts/migrations/0003_auto_20160403_1243.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1427,14 +1436,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SKILLASK/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="16" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/skills/rest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="436">
@@ -1460,6 +1461,22 @@
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SKILLASK/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="249" column="51" selection-start-line="249" selection-start-column="51" selection-end-line="249" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>

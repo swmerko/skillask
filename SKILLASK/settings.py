@@ -246,3 +246,5 @@ if CURRENT_ENV == 'LIVE':
 else:
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, '../media')
+
+FRONTEND_BASE_URL = 'http://frontend.skillask.com/'
