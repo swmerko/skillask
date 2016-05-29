@@ -59,7 +59,7 @@ class UserSkill(TimeStampedModel):
         return self.supportuserskill_set.filter(supporter_id=user_id) > 0
 
     def supporters(self):
-        return self.supportuserskill_set.values_list('id', flat=True)
+        return self.supportuserskill_set.values_list('supporter_id', flat=True)
 
 
 class SupportUserSkill(TimeStampedModel):
