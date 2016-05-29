@@ -1,3 +1,5 @@
+import json
+
 from rest_framework import viewsets, status
 from rest_framework.exceptions import ValidationError
 from rest_framework.filters import SearchFilter, DjangoFilterBackend
@@ -5,7 +7,8 @@ from rest_framework.response import Response
 
 from .models import Skill, UserSkill, SupportUserSkill, SkillProposal
 from .serializers import SkillSerializer, UserSkillSerializer, SupportUserSkillSerializer, UserSkillExtendedSerializer, \
-    SkillProposalSerializer, CreateSkillSerializer, CreateSkillProposalSerializer
+    SkillProposalSerializer, CreateSkillSerializer, CreateSkillProposalSerializer, \
+    UserSkillExtendedWithSupportersSerializer
 
 
 # class SkillFilter(django_filters.FilterSet):
@@ -79,6 +82,10 @@ class UserSkillViewSet(viewsets.ModelViewSet):
 
     def get_serializer_class(self):
         if self.action == 'list':
+            include_supporters = json.loads(self.request.query_params.get('includeSupporters', 'false'))
+            if include_supporters:
+                return UserSkillExtendedWithSupportersSerializer
+
             return UserSkillExtendedSerializer
         else:
             return UserSkillSerializer

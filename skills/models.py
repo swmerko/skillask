@@ -1,14 +1,14 @@
-from core.models import TimeStampedModel
 from django.conf import settings
 from django.db import models
 from treebeard.mp_tree import MP_Node
+
+from core.models import TimeStampedModel
 
 STATES = (
     (0, 'pending'),
     (1, 'approved'),
     (2, 'rejected')
 )
-
 
 CATEGORY = (
     (0, 'unset'),
@@ -54,6 +54,12 @@ class UserSkill(TimeStampedModel):
 
     def __unicode__(self):
         return "%s_%s" % (self.user.username, self.skill.name)
+
+    def is_supporter(self, user_id):
+        return self.supportuserskill_set.filter(supporter_id=user_id) > 0
+
+    def supporters(self):
+        return self.supportuserskill_set.values_list('id', flat=True)
 
 
 class SupportUserSkill(TimeStampedModel):

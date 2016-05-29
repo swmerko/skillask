@@ -30,6 +30,10 @@ class UserSkillExtendedSerializer(serializers.Serializer):
     user_full_name = serializers.CharField(max_length=200, source='user.get_full_name')
 
 
+class UserSkillExtendedWithSupportersSerializer(UserSkillExtendedSerializer):
+    supporters = serializers.ListField(required=False)
+
+
 class SkillProposalSerializer(serializers.ModelSerializer):
     class Meta:
         model = SkillProposal
