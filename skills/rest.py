@@ -105,6 +105,22 @@ class SupportUserSkillViewSet(viewsets.ModelViewSet):
     queryset = SupportUserSkill.objects.all()
     filter_fields = ('supporter', 'user_skill')
 
+    def get_queryset(self):
+        """
+        Optionally restricts the returned purchases to a given user,
+        by filtering against a `username` query parameter in the URL.
+        """
+        queryset = SupportUserSkill.objects.all()
+        supporter = self.request.query_params.get('supporter', None)
+        if supporter is not None:
+            queryset = queryset.filter(supporter=supporter)
+
+        user_skill = self.request.query_params.get('userSkill', None)
+        if user_skill:
+            queryset = queryset.filter(user_skill=user_skill)
+
+        return queryset
+
     def destroy(self, request, *args, **kwargs):
         instance = self.get_object()
         self.perform_destroy(instance)
