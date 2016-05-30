@@ -49,6 +49,6 @@ def post_social_login(request):
 
     token = access_token.token
     params = {'token': token}
-    redirect_url = 'http://matteoercolani.it/skillask/?' + urllib.urlencode(params) + '#profile/addSkills'
+    redirect_url = '%s?' % settings.FRONTEND_BASE_URL + urllib.urlencode(params)
 
     return redirect(redirect_url)
