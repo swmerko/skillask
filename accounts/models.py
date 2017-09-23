@@ -18,6 +18,6 @@ class UserProfile(GeolocationModel):
             return None
 
     def __unicode__(self):
-        return '%s Profile' % self.user
+        return '%s Profile' % self.user.get_full_name()
 
 User.profile = property(lambda u: UserProfile.objects.get_or_create(user=u)[0])
