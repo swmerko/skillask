@@ -1,9 +1,7 @@
 {% extends 'layout.html' %}
 
 {% load static %}
-
-{% block main %}
-
+{% block header %}
 
     <header>
         <div class="header-content">
@@ -24,6 +22,9 @@
             </div>
         </div>
     </header>
+{% endblock %}
+{% block main %}
+
 
     <section class="bg-primary" id="about">
         <div class="container">
@@ -199,7 +200,7 @@
 {% endblock main %}
 
 {% block bottomscripts %}
-{#    <script src="{% static 'typeahead/dist/bootstrap3-typeahead.js' %}"></script>#}
+    {#    <script src="{% static 'typeahead/dist/bootstrap3-typeahead.js' %}"></script>#}
     <link rel="stylesheet" href="{% static 'typeahead/css/typeaheadjs.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'typeahead/css/custom.typeaheadjs.css' %}" type="text/css">
     <script src="{% static 'typeahead/dist/typeahead.jquery.js' %}"></script>
@@ -208,41 +209,48 @@
 
     <script type="application/javascript">
 
-        // Instantiate the Bloodhound suggestion engine
-        var skills = new Bloodhound({
-                        datumTokenizer: function (datum) {
-                            return Bloodhound.tokenizers.whitespace(datum.value);
-                        },
-            datumTokenizer: Bloodhound.tokenizers.whitespace,
-            queryTokenizer: Bloodhound.tokenizers.whitespace,
-            remote: {
-                url: 'https://skillask.herokuapp.com/skills/api/skills/?search=%QUERY',
-                wildcard: '%QUERY',
-                filter: function (skills) {
-                    // Map the remote source JSON array to a JavaScript object array
-                    return $.map(skills.results, function (skill) {
-                        return {
-                            value: skill.name
-                        };
-                    });
-                }
-            }
-        });
+      var searchUrl = '{% url 'search' %}';
 
-        // Initialize the Bloodhound suggestion engine
-        skills.initialize();
+      // Instantiate the Bloodhound suggestion engine
+      var skills = new Bloodhound({
+        datumTokenizer: function (datum) {
+          return Bloodhound.tokenizers.whitespace(datum.value);
+        },
+        datumTokenizer: Bloodhound.tokenizers.whitespace,
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        remote: {
+          url: 'https://skillask.herokuapp.com/skills/api/skills/?search=%QUERY',
+          wildcard: '%QUERY',
+          filter: function (skills) {
+            // Map the remote source JSON array to a JavaScript object array
+            return $.map(skills.results, function (skill) {
+              return {
+                value: skill.name,
+                id: skill.id
+              };
+            });
+          }
+        }
+      });
 
-        // Instantiate the Typeahead UI
-        $('.typeahead').typeahead(
-                {
-                    hint: true,
-                    highlight: true,
-                    minLength: 1
-                }, {
-                    displayKey: 'value',
-                    //items: 12,
-                    source: skills.ttAdapter(),
-                    limit: 10
-                });
+      // Initialize the Bloodhound suggestion engine
+      skills.initialize();
+
+      // Instantiate the Typeahead UI
+      $('.typeahead').typeahead(
+        {
+          hint: true,
+          highlight: true,
+          minLength: 1
+        }, {
+          displayKey: 'value',
+          //items: 12,
+          source: skills.ttAdapter(),
+          limit: 10
+        }).on('typeahead:selected', function (evt, item) {
+        // do what you want with the item here
+        window.location = searchUrl + item.id
+        console.log(item);
+      });
     </script>
 {% endblock bottomscripts %}
