@@ -51,10 +51,11 @@
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="service-box">
                             {% if user_skill.user.profile.image %}
-                            <img src="{{ user_skill.user.profile.image.url }}" width="30px" height="30px" alt=""/>
+                                <img src="{{ user_skill.user.profile.image.url }}" width="65px" height="65px" alt=""/>
+                            {% else %}
+                                <i class="fa fa-4x fa-diamond wow bounceIn text-primary"
+                                   data-wow-delay=".{{ forloop.counter }}s"></i>
                             {% endif %}
-                            <i class="fa fa-4x fa-diamond wow bounceIn text-primary"
-                               data-wow-delay=".{{ forloop.counter }}s"></i>
 
                             <h3>{{ user_skill.user.get_full_name }}</h3>
 
