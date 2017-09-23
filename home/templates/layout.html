@@ -65,12 +65,18 @@
                     <li>
                         <a class="page-scroll" href="#services">{% trans 'Get Cought' %}</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">{% trans 'Sign In' %}</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">{% trans 'Sign Up' %}</a>
-                    </li>
+                    {% if request.user.is_authenticated %}
+                        <li>
+                            <a class="page-scroll" href="#portfolio">{% trans 'Hi' %} {{ request.user.first_name }}</a>
+                        </li>
+                    {% else %}
+                        <li>
+                            <a class="page-scroll" href="#portfolio">{% trans 'Sign In' %}</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#contact">{% trans 'Sign Up' %}</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
