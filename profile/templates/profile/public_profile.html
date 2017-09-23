@@ -1,21 +1,9 @@
 {% extends 'layout.html' %}
+{% load i18n %}
 
 {% load static %}
 
 {% block header %}
-    {#    <header>#}
-    {#        <div class="header-content">#}
-    {#            <div class="header-content-inner">#}
-    {##}
-    {#                <div class="input-group" id="bloodhound">#}
-    {#                    <span class="input-group-addon"><i class="fa fa-search fa-fw"></i></span>#}
-    {#                    <input class="form-control input-lg typeahead" type="search"#}
-    {#                           placeholder="Search the bloody skill you fucking want! Damnass" data-provide="typeahead"#}
-    {#                           autocomplete="off">#}
-    {#                </div>#}
-    {#            </div>#}
-    {#        </div>#}
-    {#    </header>#}
 {% endblock %}
 
 {% block main %}
@@ -31,7 +19,7 @@
             <hr>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">{{ skill.name }}</h2>
+                    <h2 class="section-heading">{{ user.get_full_name }}</h2>
                 </div>
             </div>
         </div>
@@ -46,25 +34,32 @@
     {#    </aside>#}
     <section>
         <div class="container">
+{#            <div class="row">#}
+{#                <div class="col-lg-12 text-center">#}
+{#                    <h2 class="section-heading">{% trans 'Your skills and abilities' %}</h2>#}
+{#                    <hr class="primary">#}
+{#                </div>#}
+{#            </div>#}
             <div class="row no-gutter">
-                {% for user_skill in users_skill %}
-                    <div class="col-lg-3 col-md-6 text-center">
+                {% if users_skill %}
+                    {% for user_skill in users_skill %}
+                        {% include 'profile/components/user_skill_item.html' %}
+                    {% endfor %}
+                {% else %}
+                    <div class="col-lg-12 text-center">
                         <div class="service-box">
-                        <a href="{% url 'public_profile' user_skill.user.id %}">
-                            {% if user_skill.user.profile.image %}
-                                <img src="{{ user_skill.user.profile.image.url }}" width="65px" height="56px" alt=""/>
-                            {% else %}
-                                <i class="fa fa-4x fa-diamond wow bounceIn text-primary"
-                                   data-wow-delay=".{{ forloop.counter }}s"></i>
-                            {% endif %}
-                        </a>
+                            <i class="fa fa-4x fa-diamond wow bounceIn text-primary"
+                               data-wow-delay=".{{ forloop.counter }}s"></i>
 
-                            <h3>{{ user_skill.user.get_full_name }}</h3>
+                            <h3>{% trans 'No skills!' %}</h3>
 
-                            <p class="text-muted">{{ user_skill.skill.name }}</p>
+                            <p class="text-muted">{% trans 'Try to add some skills. Use the seatch bar!' %}</p>
                         </div>
                     </div>
-                {% endfor %}
+
+                {% endif %}
+
+
             </div>
         </div>
     </section>
@@ -121,7 +116,7 @@
           limit: 10
         }).on('typeahead:selected', function (evt, item) {
         // do what you want with the item here
-        window.location = searchUrl + item.id
+        window.location = searchUrl + item.id;
         console.log(item);
       });
     </script>

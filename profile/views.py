@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.shortcuts import render, get_object_or_404
 
@@ -7,7 +8,6 @@ from skills.models import Skill, UserSkill
 
 @login_required
 def add_skills(request):
-
     users_skill = UserSkill.objects.filter(user=request.user)
 
     context = {
@@ -33,3 +33,16 @@ def add_skill(request, skill_id=None):
     }
 
     return render(request, 'profile/add_skills.html', context)
+
+
+def public_profile(request, user_id=None):
+    user = get_object_or_404(User, pk=user_id)
+
+    users_skill = UserSkill.objects.filter(user=user)
+
+    context = {
+        'user': user,
+        'users_skill': users_skill,
+    }
+
+    return render(request, 'profile/public_profile.html', context)
