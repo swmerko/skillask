@@ -50,6 +50,7 @@ INSTALLED_APPS = (
     'skills',
     'home',
     'search',
+    'profile',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -213,7 +214,7 @@ SOCIAL_AUTH_PIPELINE = (
     'accounts.pipeline.save_location',
 )
 
-SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'post_social_login'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'add_skills'
 
 try:
     if os.environ['CURRENT_ENV'] == 'LIVE':

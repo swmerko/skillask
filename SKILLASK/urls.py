@@ -21,6 +21,8 @@ urlpatterns = [
     url(r'^accounts/', include('accounts.urls')),
     url(r'^skills/', include('skills.urls')),
     url(r'^search/', include('search.urls')),
+    # Profile
+    url(r'profile/', include('profile.urls')),
     # Api Rest
     url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
