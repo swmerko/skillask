@@ -1,0 +1,27 @@
+{% load i18n %}
+
+<div class="col-lg-3 col-md-6 text-center">
+    <div class="service-box">
+        <a href="{% url 'public_profile' user_skill.user.id %}">
+            {% if user_skill.user.profile.image %}
+                <img src="{{ user_skill.user.profile.image.url }}" width="65px" height="56px"
+                     alt=""/>
+            {% else %}
+                <i class="fa fa-4x fa-university wow bounceIn text-primary"
+                   data-wow-delay=".{{ forloop.counter }}s"></i>
+            {% endif %}
+        </a>
+
+        <h3>{{ user_skill.user.get_full_name }}</h3>
+
+        <p class="text-muted">{{ user_skill.skill.name }}</p>
+    </div>
+    {% if user_skill.supportuserskill_set.count > 0 %}
+        <p>{% blocktrans %}Supported by {{ supporter_nuber }} people.{% endblocktrans %}</p>
+    {% else %}
+        <p>{% trans 'No supporters.' %}</p>
+    {% endif %}
+    <div>
+        <a href=""><i class="fa fa-plus text-primary"></i> Support</a>
+    </div>
+</div>
