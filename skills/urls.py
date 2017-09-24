@@ -1,6 +1,7 @@
 from django.conf.urls import include, url
 from rest_framework.routers import DefaultRouter
 from .rest import SkillViewSet, UserSkillViewSet, SupportUserSkillViewSet, SkillProposalViewSet
+from .views import support_user_skill
 
 router = DefaultRouter('skills')
 
@@ -11,4 +12,5 @@ router.register(r'support_user_skills', SupportUserSkillViewSet, base_name='supp
 
 urlpatterns = [
     url(r'^api/', include(router.urls)),
+    url(r'^support-user-skill/(?P<user_skill_id>\d+)$', support_user_skill, name='support_user_skill'),
 ]

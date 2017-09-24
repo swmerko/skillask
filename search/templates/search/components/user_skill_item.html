@@ -22,7 +22,7 @@
         <p>{% trans 'No supporters.' %}</p>
     {% endif %}
     <div>
-        <a href=""><i class="fa fa-plus text-primary"></i> Support</a>
+        <a href="{% url 'support_user_skill' user_skill.id %}"><i class="fa fa-plus text-primary"></i> Support</a>
     </div>
     <hr>
 </div>
