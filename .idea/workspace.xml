@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="716ffa0a-3097-4248-ab11-04c1a33899e4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profile/templates/profile/components/supporters.html" afterPath="$PROJECT_DIR$/profile/templates/profile/components/supporters.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profile/templates/profile/components/user_skill_item.html" afterPath="$PROJECT_DIR$/profile/templates/profile/components/user_skill_item.html" />
     </list>
     <ignored path="skillask.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,21 +60,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_skill_item.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="user_skill_item.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/profile/templates/profile/components/user_skill_item.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="41" lean-forward="false" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+            <state relative-caret-position="45">
+              <caret line="3" column="3" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="supporters.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="supporters.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/profile/templates/profile/components/supporters.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="79" lean-forward="false" selection-start-line="8" selection-start-column="79" selection-end-line="8" selection-end-column="79" />
+            <state relative-caret-position="105">
+              <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -185,8 +185,8 @@
       <find>search the</find>
       <find>fa-diamond</find>
       <find>linked</find>
-      <find>blocktr</find>
       <find>post_social_registration</find>
+      <find>blocktr</find>
     </findStrings>
     <replaceStrings>
       <replace>coin_values</replace>
@@ -241,12 +241,12 @@
         <option value="$PROJECT_DIR$/profile/templates/profile/add_skills.html" />
         <option value="$PROJECT_DIR$/search/templates/search/search.html" />
         <option value="$PROJECT_DIR$/skills/models.py" />
-        <option value="$PROJECT_DIR$/profile/templates/profile/components/user_skill_item.html" />
         <option value="$PROJECT_DIR$/skills/urls.py" />
         <option value="$PROJECT_DIR$/skills/views.py" />
         <option value="$PROJECT_DIR$/search/templates/search/components/user_skill_item.html" />
         <option value="$PROJECT_DIR$/profile/templates/profile/public_profile.html" />
         <option value="$PROJECT_DIR$/profile/templates/profile/components/supporters.html" />
+        <option value="$PROJECT_DIR$/profile/templates/profile/components/user_skill_item.html" />
       </list>
     </option>
   </component>
@@ -793,20 +793,6 @@
       <option name="presentableId" value="Default" />
       <updated>1454164032210</updated>
     </task>
-    <task id="LOCAL-00027" summary="fix pipeline">
-      <created>1456003750080</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1456003750080</updated>
-    </task>
-    <task id="LOCAL-00028" summary="fix api skill + proposal">
-      <created>1459705500923</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1459705500923</updated>
-    </task>
     <task id="LOCAL-00029" summary="no">
       <created>1462475528947</created>
       <option name="number" value="00029" />
@@ -1136,7 +1122,21 @@
       <option name="project" value="LOCAL" />
       <updated>1506278129173</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="supporter">
+      <created>1506278236207</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1506278236207</updated>
+    </task>
+    <task id="LOCAL-00077" summary="supporter">
+      <created>1506278333343</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1506278333343</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1268,7 +1268,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="55" />
+      <option name="time" value="56" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Python.DjangoServer">
@@ -1671,18 +1671,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/profile/templates/profile/components/user_skill_item.html">
+    <entry file="file://$PROJECT_DIR$/profile/templates/profile/components/supporters.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="41" lean-forward="false" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+        <state relative-caret-position="105">
+          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/profile/templates/profile/components/supporters.html">
+    <entry file="file://$PROJECT_DIR$/profile/templates/profile/components/user_skill_item.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="79" lean-forward="false" selection-start-line="8" selection-start-column="79" selection-end-line="8" selection-end-column="79" />
+        <state relative-caret-position="45">
+          <caret line="3" column="3" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
           <folding />
         </state>
       </provider>
