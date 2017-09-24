@@ -1,11 +1,20 @@
+{% load i18n %}
+
 <div class="row">
-    {% for supporter in supporters %}
-        {% if supporter.user.profile.image.url %}
-        <div class="col-xs-6 col-md-3">
-            <a href="#" class="thumbnail">
-                <img class="img-responsive" src="{{ supporter.user.profile.image.url }}" alt="">
-            </a>
-        </div>
-        {% endif %}
-    {% endfor %}
+    {% if supporters %}
+        {% for supporter in supporters %}
+            <div class="col-xs-6 col-md-3">
+                <a href="#" class="thumbnail">
+                    {% if supporter.user.profile.image.url %}
+                        <img class="img-responsive" src="{{ supporter.user.profile.image.url }}" alt="">
+                    {% else %}
+                        <p>{% trans 'No img' %}</p>
+                    {% endif %}
+                </a>
+            </div>
+        {% endfor %}
+
+    {% else %}
+        <p>{% trans 'No supporters yet' %}</p>
+    {% endif %}
 </div>
