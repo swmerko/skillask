@@ -60,7 +60,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">{% trans 'Search' %}</a>
+                        <a class="page-scroll" href="">{% trans 'Search' %}</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#services">{% trans 'Get Cought' %}</a>
@@ -71,10 +71,10 @@
                         </li>
                     {% else %}
                         <li>
-                            <a class="page-scroll" href="#portfolio">{% trans 'Sign In' %}</a>
+                            <a class="page-scroll" href="{% url 'social:begin' 'facebook' %}"><i class="fa fa-facebook-square"></i> {% trans 'Sign In' %}</a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#contact">{% trans 'Sign Up' %}</a>
+                            <a class="page-scroll" href="{% url 'social:begin' 'linkedin-oauth2' %}"><i class="fa fa-linkedin-square"></i> {% trans 'Sign In' %}</a>
                         </li>
                     {% endif %}
                 </ul>

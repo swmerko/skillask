@@ -1,6 +1,8 @@
 {% extends 'layout.html' %}
 
+{% load i18n %}
 {% load static %}
+
 {% block header %}
 
     <header>
@@ -11,7 +13,7 @@
                 <div class="input-group" id="bloodhound">
                     <span class="input-group-addon"><i class="fa fa-search fa-fw"></i></span>
                     <input class="form-control input-lg typeahead" type="search"
-                           placeholder="Search the bloody skill you fucking want! Damnass" data-provide="typeahead"
+                           placeholder="{% trans 'Search the skill' %}" data-provide="typeahead"
                            autocomplete="off">
                 </div>
                 <hr>
