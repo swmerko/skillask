@@ -5,7 +5,7 @@
         {% for supporter in supporters %}
             <div class="col-xs-6 col-md-3">
                 <a href="#" class="thumbnail">
-                    {% if supporter.supporter.profile.image.url %}
+                    {% if supporter.supporter.profile.image %}
                         <img class="img-responsive" src="{{ supporter.supporter.profile.image.url }}" alt="">
                     {% else %}
                         <p>{% trans 'No img' %}</p>
