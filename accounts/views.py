@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 # Create your views here.
 from oauth2_provider.models import AccessToken, Application
 from oauth2_provider.settings import oauth2_settings
@@ -52,3 +52,8 @@ def post_social_login(request):
     redirect_url = '%s?' % settings.FRONTEND_BASE_URL + urllib.urlencode(params)
 
     return redirect(redirect_url)
+
+
+def login(request):
+    context = {}
+    return render(request, 'accounts/login.html', context)

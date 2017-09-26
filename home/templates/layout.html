@@ -63,14 +63,14 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="">{% trans 'Search' %}</a>
+                        <a class="page-scroll" href="{% url 'home' %}">{% trans 'Search' %}</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">{% trans 'Get Cought' %}</a>
+                        <a class="page-scroll" href="{% url 'add_skills' %}">{% trans 'Get Cought' %}</a>
                     </li>
                     {% if request.user.is_authenticated %}
                         <li>
-                            <a class="page-scroll" href="#portfolio">{% trans 'Hi' %} {{ request.user.first_name }}</a>
+                            <a class="page-scroll" href="{% url 'private_profile' %}">{% trans 'Hi' %} {{ request.user.first_name }}</a>
                         </li>
                     {% else %}
                         <li>
@@ -282,6 +282,7 @@
     </section>
 {% endblock main %}
 
+{% block post_main %}
 <aside class="bg-dark">
     <div class="container text-center">
         <div class="call-to-action">
@@ -290,6 +291,9 @@
         </div>
     </div>
 </aside>
+{% endblock %}
+
+
 {% block bottom %}
     <section id="contact">
         <div class="container">
