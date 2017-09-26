@@ -4,7 +4,7 @@
     {% if supporters %}
         {% for supporter in supporters %}
             <div class="col-xs-6 col-md-3 text-center">
-                <a href="#" class="thumbnail">
+                <a href="{% url 'public_profile' supporter.supporter.id %}" class="thumbnail">
                     {% if supporter.supporter.profile.image %}
                         <img class="img-responsive" src="{{ supporter.supporter.profile.image.url }}" alt="">
                     {% else %}
