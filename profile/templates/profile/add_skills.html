@@ -31,7 +31,7 @@
 
                 {% for skill in adviced_skills %}
                     <a href="{% url 'add_skill' skill.id %}" class="btn btn-default btn-xl wow tada"
-                       style="visibility: visible; animation-name: tada;">{{ skill.name }}</a>
+                       style="visibility: visible; animation-name: tada;"><i class="fa fa-plus"> {{ skill.name }}</a>
                 {% endfor %}
 
             {% endif %}

@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="716ffa0a-3097-4248-ab11-04c1a33899e4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/accounts/templates/accounts/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SKILLASK/settings.py" afterPath="$PROJECT_DIR$/SKILLASK/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/accounts/urls.py" afterPath="$PROJECT_DIR$/accounts/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/accounts/views.py" afterPath="$PROJECT_DIR$/accounts/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home/templates/layout.html" afterPath="$PROJECT_DIR$/home/templates/layout.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profile/urls.py" afterPath="$PROJECT_DIR$/profile/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profile/templates/profile/add_skills.html" afterPath="$PROJECT_DIR$/profile/templates/profile/add_skills.html" />
     </list>
     <ignored path="skillask.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/accounts/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
-              <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -57,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_skills.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="add_skills.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/profile/templates/profile/add_skills.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+            <state relative-caret-position="300">
+              <caret line="33" column="94" lean-forward="false" selection-start-line="33" selection-start-column="94" selection-end-line="33" selection-end-column="94" />
               <folding>
                 <element signature="e#1319#1369#0#HTML" expanded="true" />
               </folding>
@@ -107,13 +102,13 @@
         <entry file="file://$PROJECT_DIR$/SKILLASK/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="202">
-              <caret line="175" column="12" lean-forward="true" selection-start-line="175" selection-start-column="12" selection-end-line="175" selection-end-column="12" />
+              <caret line="175" column="12" lean-forward="false" selection-start-line="175" selection-start-column="12" selection-end-line="175" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="layout.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/home/templates/layout.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="349">
@@ -126,21 +121,21 @@
       <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+            <state relative-caret-position="180">
+              <caret line="12" column="120" lean-forward="false" selection-start-line="12" selection-start-column="120" selection-end-line="12" selection-end-column="120" />
               <folding>
-                <element signature="e#815#821#0#HTML" expanded="true" />
-                <element signature="e#821#827#0#HTML" expanded="true" />
-                <element signature="e#827#833#0#HTML" expanded="true" />
-                <element signature="e#833#839#0#HTML" expanded="true" />
-                <element signature="e#839#845#0#HTML" expanded="true" />
-                <element signature="e#845#851#0#HTML" expanded="true" />
-                <element signature="e#853#859#0#HTML" expanded="true" />
-                <element signature="e#859#865#0#HTML" expanded="true" />
-                <element signature="e#865#871#0#HTML" expanded="true" />
-                <element signature="e#871#877#0#HTML" expanded="true" />
-                <element signature="e#877#883#0#HTML" expanded="true" />
-                <element signature="e#883#889#0#HTML" expanded="true" />
+                <element signature="e#812#818#0#HTML" expanded="true" />
+                <element signature="e#818#824#0#HTML" expanded="true" />
+                <element signature="e#824#830#0#HTML" expanded="true" />
+                <element signature="e#830#836#0#HTML" expanded="true" />
+                <element signature="e#836#842#0#HTML" expanded="true" />
+                <element signature="e#842#848#0#HTML" expanded="true" />
+                <element signature="e#850#856#0#HTML" expanded="true" />
+                <element signature="e#856#862#0#HTML" expanded="true" />
+                <element signature="e#862#868#0#HTML" expanded="true" />
+                <element signature="e#868#874#0#HTML" expanded="true" />
+                <element signature="e#874#880#0#HTML" expanded="true" />
+                <element signature="e#880#886#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -181,7 +176,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>what</find>
       <find>fucking want</find>
       <find>fu</find>
       <find>fucking w</find>
@@ -209,8 +203,9 @@
       <find>blocktr</find>
       <find>cover.css</find>
       <find>Let us share your abilities.</find>
-      <find>cought</find>
       <find>login_ur</find>
+      <find>cought</find>
+      <find>to cre</find>
     </findStrings>
     <replaceStrings>
       <replace>coin_values</replace>
@@ -268,14 +263,14 @@
         <option value="$PROJECT_DIR$/profile/templates/profile/components/user_skill_item.html" />
         <option value="$PROJECT_DIR$/profile/templates/profile/components/supporters.html" />
         <option value="$PROJECT_DIR$/accounts/models.py" />
-        <option value="$PROJECT_DIR$/profile/templates/profile/add_skills.html" />
         <option value="$PROJECT_DIR$/profile/views.py" />
         <option value="$PROJECT_DIR$/profile/urls.py" />
         <option value="$PROJECT_DIR$/accounts/views.py" />
         <option value="$PROJECT_DIR$/accounts/urls.py" />
         <option value="$PROJECT_DIR$/SKILLASK/settings.py" />
-        <option value="$PROJECT_DIR$/accounts/templates/accounts/login.html" />
         <option value="$PROJECT_DIR$/home/templates/layout.html" />
+        <option value="$PROJECT_DIR$/accounts/templates/accounts/login.html" />
+        <option value="$PROJECT_DIR$/profile/templates/profile/add_skills.html" />
       </list>
     </option>
   </component>
@@ -854,20 +849,6 @@
       <option name="presentableId" value="Default" />
       <updated>1454164032210</updated>
     </task>
-    <task id="LOCAL-00039" summary="add skill category">
-      <created>1464195472929</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1464195472929</updated>
-    </task>
-    <task id="LOCAL-00040" summary="content type on delete">
-      <created>1464198892525</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1464198892525</updated>
-    </task>
     <task id="LOCAL-00041" summary="content type on delete">
       <created>1464199041260</created>
       <option name="number" value="00041" />
@@ -1197,7 +1178,21 @@
       <option name="project" value="LOCAL" />
       <updated>1506460012674</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="supporter">
+      <created>1506462752614</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1506462752614</updated>
+    </task>
+    <task id="LOCAL-00089" summary="supporter">
+      <created>1506462929311</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1506462929311</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1218,12 +1213,12 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914045" sideWeight="0.497558" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.327551" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29454926" sideWeight="0.47557998" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29393306" sideWeight="0.47557998" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="manage.py@skillask" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32704404" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31990233" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32809225" sideWeight="0.492674" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32809225" sideWeight="0.492674" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24931756" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43920335" sideWeight="0.5927961" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1701,7 +1696,7 @@
     <entry file="file://$PROJECT_DIR$/accounts/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
-          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -1711,7 +1706,7 @@
     <entry file="file://$PROJECT_DIR$/SKILLASK/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
-          <caret line="175" column="12" lean-forward="true" selection-start-line="175" selection-start-column="12" selection-end-line="175" selection-end-column="12" />
+          <caret line="175" column="12" lean-forward="false" selection-start-line="175" selection-start-column="12" selection-end-line="175" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -1726,6 +1721,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/home/templates/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="65" column="69" lean-forward="false" selection-start-line="65" selection-start-column="69" selection-end-line="65" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/profile/templates/profile/public_profile.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1734,42 +1737,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="120" lean-forward="false" selection-start-line="12" selection-start-column="120" selection-end-line="12" selection-end-column="120" />
+          <folding>
+            <element signature="e#812#818#0#HTML" expanded="true" />
+            <element signature="e#818#824#0#HTML" expanded="true" />
+            <element signature="e#824#830#0#HTML" expanded="true" />
+            <element signature="e#830#836#0#HTML" expanded="true" />
+            <element signature="e#836#842#0#HTML" expanded="true" />
+            <element signature="e#842#848#0#HTML" expanded="true" />
+            <element signature="e#850#856#0#HTML" expanded="true" />
+            <element signature="e#856#862#0#HTML" expanded="true" />
+            <element signature="e#862#868#0#HTML" expanded="true" />
+            <element signature="e#868#874#0#HTML" expanded="true" />
+            <element signature="e#874#880#0#HTML" expanded="true" />
+            <element signature="e#880#886#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/profile/templates/profile/add_skills.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+        <state relative-caret-position="300">
+          <caret line="33" column="94" lean-forward="false" selection-start-line="33" selection-start-column="94" selection-end-line="33" selection-end-column="94" />
           <folding>
             <element signature="e#1319#1369#0#HTML" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-          <folding>
-            <element signature="e#815#821#0#HTML" expanded="true" />
-            <element signature="e#821#827#0#HTML" expanded="true" />
-            <element signature="e#827#833#0#HTML" expanded="true" />
-            <element signature="e#833#839#0#HTML" expanded="true" />
-            <element signature="e#839#845#0#HTML" expanded="true" />
-            <element signature="e#845#851#0#HTML" expanded="true" />
-            <element signature="e#853#859#0#HTML" expanded="true" />
-            <element signature="e#859#865#0#HTML" expanded="true" />
-            <element signature="e#865#871#0#HTML" expanded="true" />
-            <element signature="e#871#877#0#HTML" expanded="true" />
-            <element signature="e#877#883#0#HTML" expanded="true" />
-            <element signature="e#883#889#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/templates/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="65" column="69" lean-forward="false" selection-start-line="65" selection-start-column="69" selection-end-line="65" selection-end-column="69" />
-          <folding />
         </state>
       </provider>
     </entry>
