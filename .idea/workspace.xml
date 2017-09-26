@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="716ffa0a-3097-4248-ab11-04c1a33899e4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profile/templates/profile/add_skills.html" afterPath="$PROJECT_DIR$/profile/templates/profile/add_skills.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profile/views.py" afterPath="$PROJECT_DIR$/profile/views.py" />
     </list>
     <ignored path="skillask.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_skills.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="add_skills.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/profile/templates/profile/add_skills.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
-              <caret line="38" column="14" lean-forward="true" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+              <caret line="38" column="14" lean-forward="false" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
               <folding>
                 <element signature="e#1319#1369#0#HTML" expanded="true" />
               </folding>
@@ -76,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/profile/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="54" lean-forward="false" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+            <state relative-caret-position="236">
+              <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="51" selection-end-column="102" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -111,8 +111,8 @@
       <file leaf-file-name="layout.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/home/templates/layout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="65" column="69" lean-forward="false" selection-start-line="65" selection-start-column="69" selection-end-line="65" selection-end-column="69" />
+            <state relative-caret-position="807">
+              <caret line="278" column="22" lean-forward="true" selection-start-line="278" selection-start-column="22" selection-end-line="278" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -176,7 +176,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fucking want</find>
       <find>fu</find>
       <find>fucking w</find>
       <find>fucking</find>
@@ -204,8 +203,9 @@
       <find>cover.css</find>
       <find>Let us share your abilities.</find>
       <find>login_ur</find>
-      <find>cought</find>
       <find>to cre</find>
+      <find>&lt;i</find>
+      <find>cought</find>
     </findStrings>
     <replaceStrings>
       <replace>coin_values</replace>
@@ -263,14 +263,14 @@
         <option value="$PROJECT_DIR$/profile/templates/profile/components/user_skill_item.html" />
         <option value="$PROJECT_DIR$/profile/templates/profile/components/supporters.html" />
         <option value="$PROJECT_DIR$/accounts/models.py" />
-        <option value="$PROJECT_DIR$/profile/views.py" />
         <option value="$PROJECT_DIR$/profile/urls.py" />
         <option value="$PROJECT_DIR$/accounts/views.py" />
         <option value="$PROJECT_DIR$/accounts/urls.py" />
         <option value="$PROJECT_DIR$/SKILLASK/settings.py" />
-        <option value="$PROJECT_DIR$/home/templates/layout.html" />
         <option value="$PROJECT_DIR$/accounts/templates/accounts/login.html" />
         <option value="$PROJECT_DIR$/profile/templates/profile/add_skills.html" />
+        <option value="$PROJECT_DIR$/home/templates/layout.html" />
+        <option value="$PROJECT_DIR$/profile/views.py" />
       </list>
     </option>
   </component>
@@ -849,20 +849,6 @@
       <option name="presentableId" value="Default" />
       <updated>1454164032210</updated>
     </task>
-    <task id="LOCAL-00042" summary="content type on delete">
-      <created>1464199364061</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1464199364061</updated>
-    </task>
-    <task id="LOCAL-00043" summary="content type on delete">
-      <created>1464368976846</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1464368976846</updated>
-    </task>
     <task id="LOCAL-00044" summary="content type on delete">
       <created>1464369152709</created>
       <option name="number" value="00044" />
@@ -1192,7 +1178,21 @@
       <option name="project" value="LOCAL" />
       <updated>1506463146767</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="supporter">
+      <created>1506463175122</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1506463175122</updated>
+    </task>
+    <task id="LOCAL-00092" summary="supporter">
+      <created>1506463373213</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1506463373213</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1665,16 +1665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/profile/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="54" lean-forward="false" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/home/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1721,14 +1711,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home/templates/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="65" column="69" lean-forward="false" selection-start-line="65" selection-start-column="69" selection-end-line="65" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/profile/templates/profile/public_profile.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1761,9 +1743,27 @@
     <entry file="file://$PROJECT_DIR$/profile/templates/profile/add_skills.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="38" column="14" lean-forward="true" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+          <caret line="38" column="14" lean-forward="false" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
           <folding>
             <element signature="e#1319#1369#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/templates/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="807">
+          <caret line="278" column="22" lean-forward="true" selection-start-line="278" selection-start-column="22" selection-end-line="278" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profile/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="51" selection-end-column="102" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -46,7 +46,10 @@ def add_skill(request, skill_id=None):
     users_skill_ids = request.user.profile.skill_ids()
 
     if skill_id:
-        adviced_skills = skill.get_siblings().exclude(id__in=users_skill_ids).exclude(id=skill.id)
+        adviced_skills = skill.get_children().exclude(id__in=users_skill_ids).exclude(id=skill.id)
+
+        if not adviced_skills:
+            adviced_skills = skill.get_siblings().exclude(id__in=users_skill_ids).exclude(id=skill.id)
 
     if not adviced_skills:
         skills_list_ids = Skill.objects.all().exclude(id__in=users_skill_ids)[:50].values_list('id', flat=True)
