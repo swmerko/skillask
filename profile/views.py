@@ -10,11 +10,21 @@ from skills.models import Skill, UserSkill
 
 @login_required
 def add_skills(request):
+    skill = None
+    adviced_skills = []
+
     users_skill = UserSkill.objects.filter(user=request.user)
+    users_skill_ids = request.user.profile.skill_ids()
+
+    if not adviced_skills:
+        skills_list_ids = Skill.objects.all().exclude(id__in=users_skill_ids)[:50].values_list('id', flat=True)
+        random_skills_ids = random.sample(skills_list_ids, 5)
+        adviced_skills = Skill.objects.filter(id__in=random_skills_ids)
 
     context = {
         'users_skill': users_skill,
-        'last_skill_added': None,
+        'last_skill_added': skill,
+        'adviced_skills': adviced_skills,
     }
 
     return render(request, 'profile/add_skills.html', context)
@@ -33,10 +43,9 @@ def add_skill(request, skill_id=None):
             pass
 
     users_skill = UserSkill.objects.filter(user=request.user)
+    users_skill_ids = request.user.profile.skill_ids()
 
     if skill_id:
-        users_skill_ids = request.user.profile.skill_ids()
-
         adviced_skills = skill.get_siblings().exclude(id__in=users_skill_ids).exclude(id=skill.id)
 
     if not adviced_skills:
