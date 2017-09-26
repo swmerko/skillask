@@ -55,8 +55,8 @@
       <file leaf-file-name="add_skills.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/profile/templates/profile/add_skills.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="33" column="94" lean-forward="false" selection-start-line="33" selection-start-column="94" selection-end-line="33" selection-end-column="94" />
+            <state relative-caret-position="375">
+              <caret line="38" column="14" lean-forward="true" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
               <folding>
                 <element signature="e#1319#1369#0#HTML" expanded="true" />
               </folding>
@@ -849,13 +849,6 @@
       <option name="presentableId" value="Default" />
       <updated>1454164032210</updated>
     </task>
-    <task id="LOCAL-00041" summary="content type on delete">
-      <created>1464199041260</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1464199041260</updated>
-    </task>
     <task id="LOCAL-00042" summary="content type on delete">
       <created>1464199364061</created>
       <option name="number" value="00042" />
@@ -1192,7 +1185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1506462929311</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="supporter">
+      <created>1506463146766</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1506463146767</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1760,8 +1760,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/profile/templates/profile/add_skills.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="33" column="94" lean-forward="false" selection-start-line="33" selection-start-column="94" selection-end-line="33" selection-end-column="94" />
+        <state relative-caret-position="375">
+          <caret line="38" column="14" lean-forward="true" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
           <folding>
             <element signature="e#1319#1369#0#HTML" expanded="true" />
           </folding>
