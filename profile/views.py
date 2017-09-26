@@ -1,3 +1,5 @@
+import random
+
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.db import IntegrityError
@@ -12,6 +14,7 @@ def add_skills(request):
 
     context = {
         'users_skill': users_skill,
+        'last_skill_added': None,
     }
 
     return render(request, 'profile/add_skills.html', context)
@@ -19,6 +22,9 @@ def add_skills(request):
 
 @login_required
 def add_skill(request, skill_id=None):
+    skill = None
+    adviced_skills = []
+
     if skill_id:
         skill = get_object_or_404(Skill, pk=skill_id)
         try:
@@ -28,8 +34,20 @@ def add_skill(request, skill_id=None):
 
     users_skill = UserSkill.objects.filter(user=request.user)
 
+    if skill_id:
+        users_skill_ids = request.user.profile.skill_ids()
+
+        adviced_skills = skill.get_siblings().exclude(id__in=users_skill_ids).exclude(id=skill.id)
+
+    if not adviced_skills:
+        skills_list_ids = Skill.objects.all().exclude(id__in=users_skill_ids)[:50].values_list('id', flat=True)
+        random_skills_ids = random.sample(skills_list_ids, 5)
+        adviced_skills = Skill.objects.filter(id__in=random_skills_ids)
+
     context = {
         'users_skill': users_skill,
+        'last_skill_added': skill,
+        'adviced_skills': adviced_skills,
     }
 
     return render(request, 'profile/add_skills.html', context)

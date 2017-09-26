@@ -8,19 +8,34 @@
 {% block main %}
 
     <section class="bg-primary" id="about">
-        <div class="container">
+        <div class="container text-center">
+
+            {% if last_skill_added %}
+                <h3>{% blocktrans with skill_name=last_skill_added.name %}Cool, you just added
+                    <strong class="wow tada">{{ skill_name }}</strong>. Try to add other skills.</h3>
+                {% endblocktrans %}
+            {% else %}
+                <h3>{% trans 'Search some skill here belove and add it to your profile' %}</h3>
+            {% endif %}
+
             <div class="input-group" id="bloodhound">
                 <span class="input-group-addon"><i class="fa fa-search fa-fw"></i></span>
                 <input class="form-control input-lg typeahead" type="search"
                        placeholder="{% trans 'Search some skill for your profile' %}" data-provide="typeahead"
                        autocomplete="off">
             </div>
-            <hr>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">{{ user.name }}</h2>
-                </div>
-            </div>
+
+            {% if adviced_skills %}
+                <hr>
+                <h3>{% trans 'Maybe we can advise some skills:' %}</h3>
+
+                {% for skill in adviced_skills %}
+                    <a href="{% url 'add_skill' skill.id %}" class="btn btn-default btn-xl wow tada"
+                       style="visibility: visible; animation-name: tada;">{{ skill.name }}</a>
+                {% endfor %}
+
+            {% endif %}
+
         </div>
     </section>
     {#    <aside class="bg-light">#}

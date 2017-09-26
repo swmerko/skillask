@@ -20,4 +20,10 @@ class UserProfile(GeolocationModel):
     def __unicode__(self):
         return '%s Profile' % self.user.get_full_name()
 
+    def skill_ids(self):
+        result = []
+        for user_skill in self.user.userskill_set.all():
+            result.append(user_skill.skill.id)
+        return result
+
 User.profile = property(lambda u: UserProfile.objects.get_or_create(user=u)[0])
